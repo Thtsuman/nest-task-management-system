@@ -10,6 +10,7 @@
         "server-install": "cd server && yarn install",
         "server-up": "cd server && yarn start:dev",
         "client-up": "cd client && yarn dev",
+        "client-build": "cd client && yarn build",
         "run:both": "concurrently \"yarn run server-up\" \"yarn run client-up\"",
         "install-all-deps": "concurrently \"yarn run server-install\" \"yarn run client-install\""
     },
