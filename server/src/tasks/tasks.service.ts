@@ -28,4 +28,22 @@ export class TasksService {
     this.tasks.push(task);
     return task;
   }
+
+  deleteTaskById(id: string): string {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+    return 'Task deleted successfully';
+  }
+
+  updateStatus(id: string, status: TaskStatus): Task {
+    this.tasks = this.tasks.map((task) =>
+      task.id === id
+        ? {
+            ...task,
+            status,
+          }
+        : task,
+    );
+
+    return this.tasks.find((task) => task.id === id);
+  }
 }
